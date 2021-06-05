@@ -1,0 +1,97 @@
+.whyChooseUs {
+    max-width: 1600px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin: 0 auto;
+}
+
+.whyChooseUsHeader {
+    max-width: 600px;
+    margin-bottom: 50px;
+    line-height: 26px;
+}
+
+.whyChooseUsHeader>h3 {
+    margin-bottom: 20px;
+}
+
+.whyChooseUsCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.whyChooseUsCards {
+    max-width: 30%;
+    min-width: 350px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    padding-bottom: 50px;
+}
+
+.whyChooseUsCards:hover {
+    box-shadow: 1px 0px 35px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.whyChooseUsCardImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.whyChooseUsCards>div:nth-of-type(2) {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    max-width: 90%;
+}
+
+.whyChooseUsCardTitleDescription>p:nth-of-type(1) {
+    color: gray;
+    line-height: normal;
+}
+
+.seeMore {
+    color: #5278f7;
+    font-weight: 600;
+    width: 80px;
+    text-decoration-line: none;
+}
+
+.pinkIcon {
+    color: white;
+    font-size: 15px;
+    height: 38px;
+    width: 38px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 1000px;
+    background-color: #f91944;
+    margin-right: 10px;
+}
+
+.seeMoreArrow {
+    background-color: #19e270;
+    color: white;
+    height: 20px;
+    width: 20px;
+    font-size: 12px;
+    text-align: center;
+    margin-left: 15px;
+    line-height: 18px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.whyChooseUsCardTitleDescription {
+    width: 80%;
+}
+
+.whyChooseUsCardTitle {
+    align-items: center;
+    display: flex;
+    color: black;
+    margin-top: 50px;
+    max-width: 440px;
+}

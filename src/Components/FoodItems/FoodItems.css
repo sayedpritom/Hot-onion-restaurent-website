@@ -1,0 +1,78 @@
+.foodItems {
+    width: 100%;
+}
+
+.foodItemContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.categoryButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.categoryButtons>* {
+    margin: 0 20px;
+    height: 0;
+    border: none;
+    font-size: 18px;
+    background-color: white;
+    font-weight: 600;
+    color: black;
+}
+
+.categoryButtons>*:focus::after {
+    content: '';
+    background: #f91944;
+    display: block;
+    width: 40px;
+    height: 3px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.defaultLunchButton::after {
+    content: '';
+    background: #f91944;
+    display: block;
+    width: 40px;
+    height: 3px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.checkoutYourFood {
+    height: 55px;
+    width: 325px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor:pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.checkoutYourFood:hover {
+    background-color:#4b262d;
+}
+.checkoutYourFood:active {
+    position:relative;
+    top:1px;
+}
+
+@media screen and (max-width: 600px)  {
+    .checkoutYourFood {
+        width: 200px;
+    }
+}
