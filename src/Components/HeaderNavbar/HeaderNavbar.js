@@ -17,7 +17,6 @@ const HeaderNavbar = () => {
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 setLoggedInUser(user)
-                console.log(user)
             } else {
                 setLoggedInUser(null)
             }
@@ -35,7 +34,7 @@ const HeaderNavbar = () => {
                     <Form inline className="ml-auto header-items" id="header-items">
                         <button ><FontAwesomeIcon icon={faShoppingCart} /></button>
                         {
-                            loggedInUser !== '' ?
+                            loggedInUser !== null ?
                                 <button style={{ "color": "#f91944" }} className="login-btn"><Link to="/signup">{loggedInUser.email}</Link></button>
                                 : <>
                                     <button className="login-btn"><Link to="/login">Log in</Link></button>

@@ -5,13 +5,10 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../firebaseConfig';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { cartContext } from '../../App';
 
 firebase.initializeApp(firebaseConfig);
 
-const SignUpForm = () => {
-    const [cartItem, setCartItem] = useContext(cartContext);
-    
+const SignUpForm = () => {    
     const [newUser, setNewUser] = useState(true);
     const [responseMessage, setResponseMessage] = useState('');
     const [user, setUser] = useState({

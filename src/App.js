@@ -12,14 +12,14 @@ import Footer from './Components/Footer/Footer';
 import SignUpForm from './Components/SignUpForm/SignUpForm';
 import LoginForm from './Components/LoginForm/LoginForm';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
+import OrderPlaced from './Components/OrderPlaced/OrderPlaced';
 
 export const cartContext = createContext()
 
 function App() {
   const [cartItem, setCartItem] = useState([]);
-  const [loggedInUser, setloggedInUser] = useState('jibon');
   return (
-    <cartContext.Provider value={[[cartItem, setCartItem], [loggedInUser, setloggedInUser]]}>
+    <cartContext.Provider value={[cartItem, setCartItem]}>
       <Router>
         <Switch>
           <Route path="/home">
@@ -35,8 +35,11 @@ function App() {
           <Route path="/login">
             <LoginForm></LoginForm>
           </Route>
-          <Route path="/placeHolder">
+          <Route path="/placeOrder">
             <PlaceOrder></PlaceOrder>
+          </Route>
+          <Route path="/OrderPlaced">
+            <OrderPlaced></OrderPlaced>
           </Route>
           <Route exact path="*">
             <HeaderNavbar></HeaderNavbar>

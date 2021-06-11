@@ -1,0 +1,57 @@
+.placeOrder>div:nth-child(2) {
+    max-width: 1366px;
+    margin: 0 auto;
+}
+
+.placeOrderBody {
+    padding: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.deliveryDetails>p, .deliveryDetails>form>input {
+    width: 100vh;
+    max-width: 550px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    font-weight: 400;
+    height: 65px;
+}
+
+.deliveryDetails>form>input::placeholder {
+    font-weight: 600;
+}
+
+.deliveryDetails>form>input:nth-of-type(5) {
+    height: 85px;
+}
+.deliveryDetails>p {
+    width: 100vh;
+    background: none;
+    border-radius: 0;
+    height: 50px;
+    padding: 0;
+    border-bottom: 1px solid gray;
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+.deliveryDetails>form>input:last-child {
+    color: white;
+    font-size: 18px;
+    background-color: #f91944;
+}
+.placeOrderBtn {
+    color: white;
+    background-color: #f91944;
+    width: 370px;
+    border: none;
+    border-radius: 10px;
+    height: 60px;
+}

@@ -11,7 +11,6 @@ import { cartContext } from '../../App';
 const ItemDetails = (props) => {
 
     const [cartItem, setCartItem] = useContext(cartContext)
-
     const setClick = props.setClick;
 
     const [id, setId] = useState(props.id);
@@ -56,7 +55,6 @@ const ItemDetails = (props) => {
                         </div>
                     </div>
                     <button onClick={() => setCartItem( () => handleCart())} className="addToCartBtn"><FontAwesomeIcon icon={faShoppingCart} /> Add</button>
-                    <h3>{console.log(cartItem)}</h3>
                 </div>
                 <div className="moreItemsContainer">
                     <img onClick={() => { setId(num + 1) }} src={next[num].image} alt="" />

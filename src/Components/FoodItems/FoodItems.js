@@ -4,6 +4,7 @@ import fakeData from '../../FakeData/fakeData';
 import Food from '../Food/Food';
 import ItemDetails from '../ItemDetails/ItemDetails';
 import { cartContext } from '../../App';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const FoodItems = () => {
     const [cartItem, setCartItem] = useContext(cartContext);
@@ -26,24 +27,26 @@ const FoodItems = () => {
     }
 
     let checkoutYourFoodStyle;
-    [...cartItem].length > 0 ? checkoutYourFoodStyle = {'backgroundColor': "#f91944"} : checkoutYourFoodStyle = {'backgroundColor': "lightGray"}
+    [...cartItem].length > 0 ? checkoutYourFoodStyle = { 'backgroundColor': "#f91944" } : checkoutYourFoodStyle = { 'backgroundColor': "lightGray" };
 
+    let checkoutPath = [...cartItem].length > 0 ? '/placeOrder' : '/';
+ 
     return (
         <div >
             <div className="foodItems">
-            <div className="categoryButtons">
-                <button onClick={() => filterItems('breakfast')}>Breakfast</button>
-                <button className={defaultLunchButtonClass} onClick={() => filterItems('lunch')}>Lunch</button>
-                <button onClick={() => filterItems('dinner')}>Dinner</button>
-            </div>
+                <div className="categoryButtons">
+                    <button onClick={() => filterItems('breakfast')}>Breakfast</button>
+                    <button className={defaultLunchButtonClass} onClick={() => filterItems('lunch')}>Lunch</button>
+                    <button onClick={() => filterItems('dinner')}>Dinner</button>
+                </div>
             </div>
             <div className="foodItemContainer">
-                {click === 'show' && <ItemDetails setClick = {setClick} click = {click} id={id} ></ItemDetails> }
-                {items.map(item => <Food setClick = {setClick} setId = {setId} item={item} ></Food>)}
+                {click === 'show' && <ItemDetails setClick={setClick} click={click} id={id} ></ItemDetails>}
+                {items.map(item => <Food setClick={setClick} setId={setId} item={item} ></Food>)}
             </div>
-            <button style = {checkoutYourFoodStyle} className="checkoutYourFood">Checkout Your Food</button>
+            <Link to={checkoutPath} onClick={() => [...cartItem].length <= 0 && alert('Your cart is empty')}><button style={checkoutYourFoodStyle} className="checkoutYourFood">Checkout Your Food</button></Link>
         </div>
     );
 };
- 
+
 export default FoodItems;
