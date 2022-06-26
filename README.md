@@ -1,3 +1,5 @@
+## Live website: https://lucent-malabi-5e144c.netlify.app/
+
 ## Here are the implemented functionalities of this website:
 1. Select one or multiple items.
 2. Select items by quantity.
