@@ -11,6 +11,7 @@ const PlaceOrder = () => {
 
     const [cartItem, setCartItem] = useContext(cartContext);
     const [item, setItem] = useState([]);
+    const [formFilled, setFormFilled] = useState(false)
 
     useEffect(() => {
         if (cartItem.length > 0) {
@@ -23,6 +24,7 @@ const PlaceOrder = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setFormFilled(true)
     }
 
     return (
@@ -35,13 +37,14 @@ const PlaceOrder = () => {
                     <div className="deliveryDetails">
                         <p>Edit Delivery Details</p>
                         <form onSubmit={handleSubmit}>
-                            <input type="text" name="" id="" placeholder="Deliver to" /> <br />
-                            <input type="text" name="" id="" placeholder="Road No" /><br />
-                            <input type="text" name="" id="" placeholder="Flat, suite or floor" /><br />
-                            <input type="text" name="" id="" placeholder="Business Name" /><br />
-                            <input type="text" name="" id="" placeholder="Add Delivery Instructor" /><br />
-                            <input type="submit" name="" id="" value="Save info" />
+                            <input type="text" name="" required id="" placeholder="Deliver to" /> <br />
+                            <input type="text" name="" required id="" placeholder="Road No" /><br />
+                            <input type="text" name="" required id="" placeholder="Flat, suite or floor" /><br />
+                            <input type="text" name="" required id="" placeholder="Business Name" /><br />
+                            <input type="text" name="" required id="" placeholder="Add Delivery Instructor" /><br />
+                            <input type="submit" name="" required id="" value="Save info" />
                         </form>
+                        {!formFilled && <p style={{"border": "none", "fontSize": "16px"}}>Please fill the form to place the order</p>}
                     </div>
                     {
                         item.length > 0 &&
@@ -51,7 +54,12 @@ const PlaceOrder = () => {
                             {
                                 item.map(item => <SmallCart item={item}></SmallCart>)
                             }
-                            <Link to ="OrderPlaced"><button className="placeOrderBtn">Place Order</button></Link>
+                            {
+                                formFilled ? <Link to="OrderPlaced"><button className="placeOrderBtn">Place Order</button></Link>
+                                    :
+                                    <Link to="OrderPlaced"><button disabled className="placeOrderBtn" style={{ "backgroundColor": "gray" }}>Place Order</button></Link>
+                            }
+                        {formFilled && <p style={{"border": "none", "fontSize": "16px", "marginTop": "10px"}}>You can place the order now</p>}
                         </div>
                     }
                 </div>

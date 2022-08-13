@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "hot-onion-restaurant-001",
-    "public": "build",
+    "public": "y",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -15,4 +14,3 @@
     ]
   }
 }
-
